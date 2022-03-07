@@ -8,8 +8,23 @@ const koa_router_1 = __importDefault(require("koa-router"));
 const app = new koa_1.default();
 const router = new koa_router_1.default();
 router.get("/", async (ctx, next) => {
-    ctx.response.body = "hello world";
+    console.log('删除资源1');
+    ctx.body = '?';
+});
+router.post("/", async (ctx, next) => {
+    console.log('删除资源2');
+    ctx.body = '?';
+});
+router.put("/", async (ctx, next) => {
+    console.log('删除资源3');
+    ctx.body = '?';
+});
+router.delete("/", async (ctx, next) => {
+    console.log('删除资源4');
+    ctx.body = '?';
 });
 app.use(router.routes());
+//app.use(Static(path.join(__dirname, '/build/static')))
+//app.use(Static(path.join(__dirname, '/static')))
 app.listen(3000);
 console.log('start');
